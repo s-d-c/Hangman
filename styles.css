@@ -1,0 +1,9 @@
+#blanks {
+	margin: auto;
+}
+
+#score,
+#display,
+#man {
+	border: 2px solid black;
+}
