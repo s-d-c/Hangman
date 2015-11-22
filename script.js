@@ -8,7 +8,7 @@ var HANGMAN = {
 	//a function called getString to randomly selct a string from an array of strings
 	getString: function(stringArr) {
 		var index = Math.floor((Math.random()) * stringArr.length);
-		return stringArr[index];
+		return stringArr[index].toUpperCase();
 	},
 
 	//a function to display the spaces hiding the letters of the answer
@@ -17,6 +17,22 @@ var HANGMAN = {
 		wordArray.forEach(function(index){
 			wordBox.append('<span class=letter>' + index +'</span>');
 		});
+	},
+
+
+	//a function that takes in a correctly guessed letter and inserts into the proper
+	//spaces of the display
+	alterDisplay: function(insert, display, answer) {
+		var upper = insert.toUpperCase();
+		for(i = 0; i < answer.length; i++){
+			if(upper === answer[i]){
+				$('.word').find('span').eq(i).text(upper);
+				//change.text(upper);
+				display[i] = upper;
+			};
+		};
+		displayArr = display;
+		
 	}
 
 	
@@ -27,16 +43,21 @@ $(document).ready(function(){
 	//call getString to get the answer word
 	var answer = HANGMAN.getString(HANGMAN.wordList);
 	console.log(answer);
-	var test = 'kjlkjlkjljkljkii';
-	var answerArr = test.split("");
+	
+	var answerArr = answer.split("");
 	console.log(answerArr);
 
-	var blanksArr =  answerArr.map(function() {
+	var displayArr =  answerArr.map(function() {
 		return "_";
 	});
-	console.log(blanksArr);
+	console.log(displayArr);
 
-	HANGMAN.displayBlanks(blanksArr);
+	HANGMAN.displayBlanks(displayArr);
+
+	HANGMAN.alterDisplay('e', displayArr, answerArr);
+
+	console.log(displayArr);
+	console.log(answerArr);
 
 	
 
