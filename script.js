@@ -24,14 +24,25 @@ var HANGMAN = {
 	//spaces of the display
 	alterDisplay: function(insert, display, answer) {
 		var upper = insert.toUpperCase();
+		//track the instances of the letter in answer
+		var howMany = 0;
 		for(i = 0; i < answer.length; i++){
 			if(upper === answer[i]){
 				$('.word').find('span').eq(i).text(upper);
 				//change.text(upper);
+				howMany += 1;
 				display[i] = upper;
 			};
 		};
 		displayArr = display;
+		console.log(howMany);
+		var response = $('.guesses').find('p').eq(1);
+		if(howMany === 1) {
+			response.text('There is 1 ' + upper + '.');
+		}
+		else {
+			response.text('There are ' + howMany + ' ' + upper + 's.');
+		}
 		
 	}
 
