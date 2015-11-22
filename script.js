@@ -11,17 +11,24 @@ var HANGMAN = {
 		return stringArr[index];
 	},
 
-	//a function that creates blank spaces on the screen to place correct letter guesses
+	//a function to display the spaces hiding the letters of the answer
+	displayBlanks: function(wordArray){
+		var wordBox = $('.word');
+		wordArray.forEach(function(index){
+			wordBox.append('<span class=letter>' + index +'</span>');
+		});
+	}
+
 	
 
-}
+};
 
 $(document).ready(function(){
 	//call getString to get the answer word
 	var answer = HANGMAN.getString(HANGMAN.wordList);
 	console.log(answer);
-
-	var answerArr = answer.split("");
+	var test = 'kjlkjlkjljkljkii';
+	var answerArr = test.split("");
 	console.log(answerArr);
 
 	var blanksArr =  answerArr.map(function() {
@@ -29,15 +36,10 @@ $(document).ready(function(){
 	});
 	console.log(blanksArr);
 
-	var practice = function(spaces) {
-		var list = $('#blanks');
-		spaces.forEach(function(i){
-			list.append('<li>' + i + '<li>');
-		});
-		console.log(list);
-	};
+	HANGMAN.displayBlanks(blanksArr);
 
-	practice(blanksArr);
+	
 
+	
 });
 
