@@ -17,12 +17,16 @@
 				<p>
 				Find the answer to the hidden word below by guessing letters.  If you guess wrong six times you lose.  Enter a letter to get started!
 				</p>
-				<input>
+				<form id="letterInput">
+					<input type="text" name="letterGuess" maxlength="1" size="3">
+					<button type="submit">Enter</button>
+				</form>
+
 			</div>
 			<div class="guesses">
 				<!-- This <p> element will display messages about current guesses -->
 				<p>You have no guesses yet.</p>
-				<p>Wrong guesses so far:</p>
+				<p>Letters guessed so far:</p>
 			</div>
 
 			

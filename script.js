@@ -1,10 +1,11 @@
 var HANGMAN = {
 	//create a list of words to pick from
 	wordList: ["human", "photograph", "laptop", "magazine", "bookshelf","longhorn","change","market", "infinite","emperor","folly","inherent","lamp","table","backpack"],
-
-	//a variable to keep track of the letters that have been called for a game
+	
 	calledLetters: [],
 
+	wrongGuesses: 0,
+	
 	//a function called getString to randomly selct a string from an array of strings
 	getString: function(stringArr) {
 		var index = Math.floor((Math.random()) * stringArr.length);
@@ -23,28 +24,54 @@ var HANGMAN = {
 	//a function that takes in a correctly guessed letter and inserts into the proper
 	//spaces of the display
 	alterDisplay: function(insert, display, answer) {
-		var upper = insert.toUpperCase();
+		
 		//track the instances of the letter in answer
 		var howMany = 0;
+		//display instances in place of blanks and increment howMany
 		for(i = 0; i < answer.length; i++){
-			if(upper === answer[i]){
-				$('.word').find('span').eq(i).text(upper);
-				//change.text(upper);
+			if(insert === answer[i]){
+				$('.word').find('span').eq(i).text(insert);
 				howMany += 1;
-				display[i] = upper;
+				display[i] = insert;
 			};
 		};
+		//update displayArr ***THIS WORKS, BUT SEEMS PROBLEMATIC CODE-WISE
 		displayArr = display;
-		console.log(howMany);
-		var response = $('.guesses').find('p').eq(1);
-		if(howMany === 1) {
-			response.text('There is 1 ' + upper + '.');
-		}
-		else {
-			response.text('There are ' + howMany + ' ' + upper + 's.');
-		}
 		
+		var guessed = $('.guesses').find('p').eq(1);
+
+		var response = $('.guesses').find('p').eq(0);
+
+		//feedback to user for right or wrong guesses
+		if (howMany === 0){
+			this.wrongGuesses += 1;
+			response.text('There are no ' + insert + 's.  Try again.');
+		}
+
+		else if(howMany === 1) {
+			response.text('Well done!  There is one ' + insert + '.');
+		}
+
+		else {
+			response.text('Way to go!  There are ' + howMany + ' ' + insert + 's!');
+		}
+		//add letter to list of guessed letters
+		guessed.append(' ' + insert + ',');
+		//add letter to array
+		this.calledLetters.push(insert);
+		console.log(this.win(display, answer));
+		console.log(this.lose(this.wrongGuesses));
+	},
+	//function to test if the player won
+	win: function(display, answer){
+		return display.toString() === answer.toString();
+	},
+	//test if the player lost
+	lose: function(num) {
+		return num === 6;
 	}
+
+
 
 	
 
@@ -53,7 +80,10 @@ var HANGMAN = {
 $(document).ready(function(){
 	//call getString to get the answer word
 	var answer = HANGMAN.getString(HANGMAN.wordList);
-	console.log(answer);
+	//initiate blank array to track letters guessed
+	HANGMAN.calledLetters = [];
+
+	HANGMAN.wrongGuesses = 0;
 	
 	var answerArr = answer.split("");
 	console.log(answerArr);
@@ -61,17 +91,35 @@ $(document).ready(function(){
 	var displayArr =  answerArr.map(function() {
 		return "_";
 	});
-	console.log(displayArr);
+
+	var letterInput = $('#letterInput');
+	
 
 	HANGMAN.displayBlanks(displayArr);
 
-	HANGMAN.alterDisplay('e', displayArr, answerArr);
-
-	console.log(displayArr);
-	console.log(answerArr);
-
 	
 
-	
+	letterInput.on('submit', function(e){
+		e.preventDefault();
+
+		//get input and capitalize
+		var letter = $('input:text').val().toUpperCase();
+
+		//verify that its a letter and not another char
+		if(!/^[a-zA-Z]+$/.test(letter)){
+			alert('There are only letters in this word.  Enter one.');
+
+		//verify that it has not been called and alert if it has
+		} else if(HANGMAN.calledLetters.indexOf(letter) >= 0){
+			alert('Try again.  That letter has already been guessed');
+
+		} else {
+		// call alterDisplay if it hasn't been called yet
+		HANGMAN.alterDisplay(letter, displayArr, answerArr);
+		}
+		//clear input and focus on
+		$('input:text').val('');
+		this.focus();
+	});
 });
 
