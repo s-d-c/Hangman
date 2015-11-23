@@ -5,12 +5,41 @@ var HANGMAN = {
 	calledLetters: [],
 
 	wrongGuesses: 0,
+
+	answer: "",
+
+	answerArr: [],
+
+	displayArr: [],
+
+	searchWord: function(){
+		$.ajax({
+			method   : 'GET',
+			url		 : 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=0&maxCorpusCount=40000&minDictionaryCount=20&maxDictionaryCount=-1&minLength=5&maxLength=16&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5',
+			success  : function(response){
+					
+					console.log(response.word);
+					HANGMAN.answer = response.word.toUpperCase();
+					
+					console.log(HANGMAN.answer);
+					HANGMAN.answerArr = HANGMAN.answer.split("");
+					console.log(HANGMAN.answerArr);
+					HANGMAN.displayArr = HANGMAN.answerArr.map(function() {
+						return "_";
+					});
+					console.log(HANGMAN.displayArr);
+					HANGMAN.displayBlanks(HANGMAN.displayArr);
+
+				
+			}
+		})
+	},
 	
 	//a function called getString to randomly selct a string from an array of strings
-	getString: function(stringArr) {
+	/*getString: function(stringArr) {
 		var index = Math.floor((Math.random()) * stringArr.length);
 		return stringArr[index].toUpperCase();
-	},
+	},*/
 
 	//a function to display the spaces hiding the letters of the answer
 	displayBlanks: function(wordArray){
@@ -24,7 +53,8 @@ var HANGMAN = {
 	//a function that takes in a correctly guessed letter and inserts into the proper
 	//spaces of the display
 	alterDisplay: function(insert, display, answer) {
-		
+		console.log(display);
+		console.log(answer);
 		//track the instances of the letter in answer
 		var howMany = 0;
 		//display instances in place of blanks and increment howMany
@@ -35,8 +65,12 @@ var HANGMAN = {
 				display[i] = insert;
 			};
 		};
+
+		if(this.win(display, answer)){
+			alert('you win');
+		}
 		//update displayArr ***THIS WORKS, BUT SEEMS PROBLEMATIC CODE-WISE
-		displayArr = display;
+		this.displayArr = display;
 		
 		var guessed = $('.guesses').find('p').eq(1);
 
@@ -45,7 +79,11 @@ var HANGMAN = {
 		//feedback to user for right or wrong guesses
 		if (howMany === 0){
 			this.wrongGuesses += 1;
+			if(this.lose(this.wrongGuesses)){
+				alert('you lose');
+			}else {
 			response.text('There are no ' + insert + 's.  Try again.');
+			}
 		}
 
 		else if(howMany === 1) {
@@ -62,43 +100,54 @@ var HANGMAN = {
 		console.log(this.win(display, answer));
 		console.log(this.lose(this.wrongGuesses));
 	},
+
 	//function to test if the player won
 	win: function(display, answer){
 		return display.toString() === answer.toString();
 	},
+
 	//test if the player lost
 	lose: function(num) {
 		return num === 6;
+	},
+
+	//behavior for a win
+	onWin: function(){
+
+	},
+
+	//behavior for a loss
+	onLose: function(){
+
 	}
-
-
-
-	
 
 };
 
 $(document).ready(function(){
-	//call getString to get the answer word
-	var answer = HANGMAN.getString(HANGMAN.wordList);
+
+	HANGMAN.searchWord();
+	
 	//initiate blank array to track letters guessed
 	HANGMAN.calledLetters = [];
 
 	HANGMAN.wrongGuesses = 0;
 	
-	var answerArr = answer.split("");
-	console.log(answerArr);
+	//var answerArr = answer.split("");
+	//console.log(answerArr);
 
-	var displayArr =  answerArr.map(function() {
+	/*var displayArr =  answerArr.map(function() {
 		return "_";
-	});
+	});*/
 
 	var letterInput = $('#letterInput');
 	
+	//This call will display the hidden word
+	//HANGMAN.displayBlanks(displayArr);
 
-	HANGMAN.displayBlanks(displayArr);
+	//focus on input field
+	letterInput.find('input').focus();
 
-	
-
+	//create eventlistener for letter submit
 	letterInput.on('submit', function(e){
 		e.preventDefault();
 
@@ -115,11 +164,13 @@ $(document).ready(function(){
 
 		} else {
 		// call alterDisplay if it hasn't been called yet
-		HANGMAN.alterDisplay(letter, displayArr, answerArr);
+		HANGMAN.alterDisplay(letter, HANGMAN.displayArr, HANGMAN.answerArr);
 		}
 		//clear input and focus on
 		$('input:text').val('');
 		this.focus();
 	});
+
+
 });
 

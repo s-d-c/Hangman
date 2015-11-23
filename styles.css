@@ -42,3 +42,32 @@
 	font-size: 96px;
 	margin: 0 5px;
 }
+
+.gallows-box {
+	height: 380px;
+	width: 50%;
+	border: 1px solid black;
+	margin: auto;
+	
+}
+
+#bottom {
+	height: 20px;
+	width: 50%;
+	background-color: black;
+	float: left;
+}
+
+#post {
+	height: 379px;
+	width: 10px;
+	float: left;
+	background-color: black;
+}
+
+#top {
+	height: 10px;
+	width: 45%;
+	float: left;
+	background-color: black;
+}
