@@ -41,75 +41,69 @@ var HANGMAN = {
 		});
 	},
 
+	checkLetter: function(letter) {
 
-	//a function that takes in a correctly guessed letter and inserts into the proper
-	//spaces of the display
-	alterDisplay: function(insert, display, answer) {
-		
 		//track the instances of the letter in answer
 		var howMany = 0;
 		//display instances in place of blanks and increment howMany
-		for(i = 0; i < answer.length; i++){
-			if(insert === answer[i]){
-				$('.word').find('span').eq(i).text(insert);
+		for(i = 0; i < this.answerArr.length; i++){
+			if(letter === this.answerArr[i]){
+				$('.word').find('span').eq(i).text(letter);
 				howMany += 1;
-				display[i] = insert;
+				this.displayArr[i] = letter;
 			};
 		};
+		if(howMany === 0){
+			this.wrongGuesses += 1;
+		};
 
-		if(this.win(display, answer)){
-			alert('you win');
+		if(this.displayArr.toString() === this.answerArr.toString()){
+			return this.onWin();
 		}
-		//update displayArr ***THIS WORKS, BUT SEEMS PROBLEMATIC CODE-WISE
-		this.displayArr = display;
+
+		else if(this.wrongGuesses === 6){
+			return this.onLose();
+		}
+		else {
+			return this.alterDisplay(letter, howMany);
+		};
+	},
+
+	//a function that takes in a correctly guessed letter and inserts into the proper
+	//spaces of the display
+	alterDisplay: function(insert, num) {
 		
 		var guessed = $('.guesses').find('p').eq(1);
 
 		var response = $('.guesses').find('p').eq(0);
 
 		//feedback to user for right or wrong guesses
-		if (howMany === 0){
-			this.wrongGuesses += 1;
-			if(this.lose(this.wrongGuesses)){
-				alert('you lose');
-			}else {
+		if (num === 0){
 			response.text('There are no ' + insert + 's.  Try again.');
 			}
-		}
 
-		else if(howMany === 1) {
+		else if(num === 1) {
 			response.text('Well done!  There is one ' + insert + '.');
 		}
 
 		else {
-			response.text('Way to go!  There are ' + howMany + ' ' + insert + 's!');
+			response.text('Way to go!  There are ' + num + ' ' + insert + 's!');
 		}
 		//add letter to list of guessed letters
 		guessed.append(' ' + insert + ',');
 		//add letter to array
 		this.calledLetters.push(insert);
-		console.log(this.win(display, answer));
-		console.log(this.lose(this.wrongGuesses));
-	},
-
-	//function to test if the player won
-	win: function(display, answer){
-		return display.toString() === answer.toString();
-	},
-
-	//test if the player lost
-	lose: function(num) {
-		return num === 6;
+		
 	},
 
 	//behavior for a win
 	onWin: function(){
-
+		alert('you win');
 	},
 
 	//behavior for a loss
 	onLose: function(){
-
+		alert('you lose');
 	}
 
 };
@@ -145,7 +139,7 @@ $(document).ready(function(){
 
 		} else {
 		// call alterDisplay if it hasn't been called yet
-		HANGMAN.alterDisplay(letter, HANGMAN.displayArr, HANGMAN.answerArr);
+		HANGMAN.checkLetter(letter);
 		}
 		//clear input and focus on
 		$('input:text').val('');
