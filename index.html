@@ -9,6 +9,22 @@
 	<header id="title-banner">
 		<h1>Hangman</h1>	
 	</header>
+
+	<div class="modal fade" id="game-over" tabindex="-1" role="dialog">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<h1></h1>
+    			<div class="modal-body">
+    				<h2></h2>
+    			</div>
+    			<div class="modal-footer">
+    				<button type="button" class="btn btn-default" data-dismiss="modal">Play Again</button>
+    			</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
 	
 
 	<div class="board">
@@ -25,8 +41,8 @@
 			</div>
 			<div class="guesses">
 				<!-- This <p> element will display messages about current guesses -->
-				<p>You have no guesses yet.</p>
-				<p>Letters guessed so far:</p>
+				<p></p>
+				<p></p>
 			</div>
 
 			
@@ -47,12 +63,21 @@
 					<div id="head">
 						
 					</div>
-					<div id="torso-box">
-						<div id="torso">
-							
+					<div class="upper-body">
+						<div  id="left-arm">	
 						</div>
-						<div id="left-arm">
-							
+						<div  id="right-arm">	
+						</div>
+						<div id="mid-section">
+						</div>
+					</div>
+
+					<div class="lower-body">
+						<div id="left-leg">
+						</div>
+						<div id="right-leg">	
+						</div>
+						<div id="waist">
 						</div>
 					</div>
 				</div>

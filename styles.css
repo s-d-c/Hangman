@@ -2,6 +2,19 @@
 	height: 100px;
 }
 
+#game-over {
+	font-size: 24px;
+	text-align: center;
+}
+
+.winner {
+	color: green;
+}
+
+.loser {
+	color: red;
+}
+
 h1 {
 	font-size: 6em;
 	text-align: center;
@@ -35,7 +48,6 @@ button {
 	height: 400px;
 	width: 46.5%;
 	float: left;
-	border: 2px solid green;
 }
 
 .person {
@@ -46,8 +58,6 @@ button {
 
 .display {
 	height: 280px;
-	border: 2px solid yellow;
-
 }
 
 .word {
@@ -91,17 +101,16 @@ button {
 }
 
 #rope {
-	height: 30px;
+	height: 40px;
 	width: 10px;
-	background-color: grey;
+	background-color: tan;
 	margin: auto;
 }
 
 .hanging-man {
-	width: 60%;
+	width: 332px;
 	height: 300px;
-	margin: auto;
-	border: 1px solid black;
+	text-align: center;
 }
 #head {
 	width: 45px;
@@ -111,23 +120,54 @@ button {
 	margin: auto;
 }
 
-#torso-box {
-	width: 100%;
-	height: 120px;
-
+.upper-body {
+	margin: auto;
+	width: 180px;
 }
 
-#torso {
-	height: 120px;
-	width: 10px;
+#mid-section {
 	margin: auto;
+	width: 10px;
+	height: 80px;
+	background-color: black;
+	}
+
+.lower-body {
+	margin: auto;
+	width: 30px;
+}
+#waist	{
+	margin: auto;
+	width: 10px;
+	height: 10px;
 	background-color: black;
 }
 
 #left-arm {
+	float: left;
 	height: 7px;
-	width: 94px;
-	top: 5px;
-	position: absolute;
+	width: 85px;
 	background-color: black;
 }
+
+#right-arm {
+	float: right;
+	height: 7px;
+	width: 85px;
+	background-color: black;
+}
+
+#left-leg {
+	float: left;
+	height: 100px;
+	width: 10px;
+	background-color: black;
+}
+
+#right-leg {
+	float: right;
+	height: 100px;
+	width: 10px;
+	background-color: black;
+}
+
