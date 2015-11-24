@@ -1,6 +1,6 @@
 var HANGMAN = {
 	//create a list of words to pick from
-	wordList: ["human", "photograph", "laptop", "magazine", "bookshelf","longhorn","change","market", "infinite","emperor","folly","inherent","lamp","table","backpack"],
+	//wordList: ["human", "photograph", "laptop", "magazine", "bookshelf","longhorn","change","market", "infinite","emperor","folly","inherent","lamp","table","backpack"],
 	
 	calledLetters: [],
 
@@ -18,29 +18,21 @@ var HANGMAN = {
 			url		 : 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=0&maxCorpusCount=40000&minDictionaryCount=20&maxDictionaryCount=-1&minLength=5&maxLength=16&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5',
 			success  : function(response){
 					
-					console.log(response.word);
+					
 					HANGMAN.answer = response.word.toUpperCase();
 					
-					console.log(HANGMAN.answer);
 					HANGMAN.answerArr = HANGMAN.answer.split("");
+
 					console.log(HANGMAN.answerArr);
 					HANGMAN.displayArr = HANGMAN.answerArr.map(function() {
 						return "_";
 					});
-					console.log(HANGMAN.displayArr);
+					
 					HANGMAN.displayBlanks(HANGMAN.displayArr);
-
-				
 			}
 		})
 	},
 	
-	//a function called getString to randomly selct a string from an array of strings
-	/*getString: function(stringArr) {
-		var index = Math.floor((Math.random()) * stringArr.length);
-		return stringArr[index].toUpperCase();
-	},*/
-
 	//a function to display the spaces hiding the letters of the answer
 	displayBlanks: function(wordArray){
 		var wordBox = $('.word');
@@ -53,8 +45,7 @@ var HANGMAN = {
 	//a function that takes in a correctly guessed letter and inserts into the proper
 	//spaces of the display
 	alterDisplay: function(insert, display, answer) {
-		console.log(display);
-		console.log(answer);
+		
 		//track the instances of the letter in answer
 		var howMany = 0;
 		//display instances in place of blanks and increment howMany
@@ -131,19 +122,9 @@ $(document).ready(function(){
 	HANGMAN.calledLetters = [];
 
 	HANGMAN.wrongGuesses = 0;
-	
-	//var answerArr = answer.split("");
-	//console.log(answerArr);
-
-	/*var displayArr =  answerArr.map(function() {
-		return "_";
-	});*/
 
 	var letterInput = $('#letterInput');
 	
-	//This call will display the hidden word
-	//HANGMAN.displayBlanks(displayArr);
-
 	//focus on input field
 	letterInput.find('input').focus();
 
