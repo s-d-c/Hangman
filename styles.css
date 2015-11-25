@@ -68,14 +68,14 @@ button {
 	width: 46.5%;
 	float: left;
 	margin-left: 20px;
-	background-image: url('images/Wooden-Door-to-Old-Western-Bar.jpg');
+	background-image: url('Wooden-Door-to-Old-Western-Bar.jpg');
 	background-size: cover;
 	color: white;
 	border-radius: 7.5px;
 }
 
 .person {
-	background-image: url('images/Western background - imgur.jpg');
+	background-image: url('Western background - imgur.jpg');
 	background-size: cover;
 	height: 400px;
 	width: 46.5%;
