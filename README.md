@@ -1,0 +1,11 @@
+# firstProject
+
+The purpose of this app is to allow a user to play hangman with a randomly selected word. The user inputs a letter, and if the answer contains the letter it is revealed on the screen.  If the user guesses wrong 6 times they lose.  If they guess all of the letters, they win.
+
+Apart from HTML, CSS, and Javascript, the program also took advantage of jQuery, Ajax, and Bootstrap.  Ajax was used to request and receive a random word from an API called Wordnik.  jQuery was used for DOM manipulation to update the word display, give feedback to the user, and update the hangman stick figure on wrong guesses.  jQuery was also used to create the event listener to detect user input.  I only used Bootstrap for the modal used at the end of the game to tell if the user won or lost.
+
+Once the word is retrieved from the API, the letters are split and stored in an array.  An array of all _s is then mapped from that one to represent the blanks to be displayed on screen to the user.  A <span> for each blank in the array is then created in the HTML using jQuery to create the display for each word.  When the user enters input, the letter is checked against the answer array and if it is in the word, the letter is displayed on the screen using jQuery.  If the letter is not in the word, a counter is incremented and part of the hanging man, which is hidden with jQuerey at the start of the game, is shown.  After each check, the winning and losing conditions are also checked and if either is met, a modal created with bootstrap pops up and the game is reset with a new word once it is closed.
+
+For some reason, I can't get one of the images I use to show on the gh pages site.  There is also a bug for the game over modals.  I added different classes that have different font colors depending on a win or loss.  It only works after a refresh until there is a loss.  After that it just keeps the loss class color of red.  Also, two of the many times I've run it I've noticed words that contain a - .  This would be problematic, as it is not expeted by the user and my input does not allow dashes anyway.  An additional filter for the chosen word could fix this.  
+
+Some additional features could be a two player option and a difficulty degree choice.  Some other features could be possible as well by using some of the word filters provided by the api.
