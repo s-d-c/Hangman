@@ -10,7 +10,7 @@ var HANGMAN = {
 
 	displayArr: [],
 
-	//Below are twon jQuery variables used to alter text in the referenced elements
+	//Below are two jQuery variables used to alter text in the referenced elements
 	guessed: $('.guesses').find('p').eq(1),
 
 	response: $('.guesses').find('p').eq(0),
@@ -45,8 +45,9 @@ var HANGMAN = {
 			wordBox.append('<span class=letter>' + index +'</span>');
 		});
 	},
-
+	//checkLetter tests if the answer for the given letter, updates and checks for winner or loser
 	checkLetter: function(letter) {
+		//array to index functions that reveal stick figure
 		var attachFuncs = [this.attachHead, this.attachMidSection, this.attachLeftArm, this.attachRightArm, this.attachLeftLeg, this.attachRightLeg];
 
 		//track the instances of the letter in answer
@@ -59,10 +60,10 @@ var HANGMAN = {
 				this.displayArr[i] = letter;
 			};
 		};
-		//this increments wrongGuesses if there are none of the letter in the answer
+		//this increments wrongGuesses and builds on hangman if there are none of the letter in the answer
 		if(howMany === 0){
 			this.wrongGuesses += 1;
-			attachFuncs[(this.wrongGuesses - 1)].call();
+			attachFuncs[(this.wrongGuesses - 1)]();
 		};
 		//tests if the player has won and calls onWin() if so
 		if(this.displayArr.toString() === this.answerArr.toString()){
@@ -96,16 +97,17 @@ var HANGMAN = {
 		//add letter to list of guessed letters
 		this.guessed.append(' ' + insert + ',');
 		//add letter to array
-		this.calledLetters.push(insert);
-		
+		this.calledLetters.push(insert);	
 	},
 
+	//hides the hanging stick figure
 	takeDownDeadMan: function(){
 		$('.hanging-man #head').hide();
 		$('.upper-body').children().hide();
 		$('.lower-body').children().hide();
 	},
 
+	//all attach functions are for building the stick man after wrong guesses
 	attachHead: function(){
 		$('#head').show();
 	},
@@ -133,17 +135,21 @@ var HANGMAN = {
 
 	//behavior for a win
 	onWin: function(){
+		//show a modal with class winner
 		$('.modal-header h1').text('YOU WIN!!!');
 		$('.modal-body h2').text('Great Job!');
 		$('#game-over').addClass('winner').modal('show');
+		//restart game
 		return this.reset();
 	},
 
 	//behavior for a loss
 	onLose: function(){
+		//show a modal with class loser
 		$('.modal-header h1').text('You Lost :(');
 		$('.modal-body h2').text('The Answer is ' + this.answer);
 		$('#game-over').addClass('loser').modal('show');
+		//restart game
 		return this.reset();
 	},
 
@@ -168,7 +174,7 @@ $(document).ready(function(){
 	
 	//focus on input field
 	letterInput.find('input').focus();
-
+	
 	//create eventlistener for letter submit
 	letterInput.on('submit', function(e){
 		e.preventDefault();
