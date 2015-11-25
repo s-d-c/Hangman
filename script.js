@@ -19,7 +19,7 @@ var HANGMAN = {
 	searchWord: function(){
 		$.ajax({
 			method   : 'GET',
-			url		 : 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=10000&maxCorpusCount=400000&minDictionaryCount=20&maxDictionaryCount=-1&minLength=5&maxLength=16&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5',
+			url		 : 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=1&maxCorpusCount=400&minDictionaryCount=20&maxDictionaryCount=-1&minLength=5&maxLength=16&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5',
 			success  : function(response){
 					
 					
@@ -109,36 +109,36 @@ var HANGMAN = {
 
 	//all attach functions are for building the stick man after wrong guesses
 	attachHead: function(){
-		$('#head').show();
+		$('#head').slideDown(1000);
 	},
 
 	attachMidSection: function(){
-		$('#mid-section').show();
+		$('#mid-section').slideDown(1000);
 	},
 
 	attachLeftArm:  function(){
-		$('#left-arm').show();
+		$('#left-arm').fadeIn(1000);
 	},
 
 	attachRightArm: function(){
-		$('#right-arm').show();
+		$('#right-arm').fadeIn(1000);
 	},
 
 	attachLeftLeg: function(){
-		$('#waist').show();
-		$('#left-leg').show();
+		$('#waist').fadeIn(700);
+		$('#left-leg').slideDown(1000);
 	},
 
 	attachRightLeg: function(){
-		$('#right-leg').show();
+		$('#right-leg').slideDown(1000);
 	},
 
 	//behavior for a win
 	onWin: function(){
 		//show a modal with class winner
-		$('.modal-header h1').text('YOU WIN!!!');
-		$('.modal-body h2').text('Great Job!');
-		$('#game-over').addClass('winner').modal('show');
+		$('.modal-header h1').addClass('winner').text('YOU WIN!!!');
+		$('.modal-body h2').addClass('winner').text('Great Job!');
+		$('#game-over').modal('show');
 		//restart game
 		return this.reset();
 	},
@@ -146,9 +146,9 @@ var HANGMAN = {
 	//behavior for a loss
 	onLose: function(){
 		//show a modal with class loser
-		$('.modal-header h1').text('You Lost :(');
-		$('.modal-body h2').text('The Answer is ' + this.answer);
-		$('#game-over').addClass('loser').modal('show');
+		$('.modal-header h1').addClass('loser').text('You Lost :(');
+		$('.modal-body h2').addClass('loser').text('The Answer is ' + this.answer);
+		$('#game-over').modal('show');
 		//restart game
 		return this.reset();
 	},
@@ -174,7 +174,7 @@ $(document).ready(function(){
 	
 	//focus on input field
 	letterInput.find('input').focus();
-	
+
 	//create eventlistener for letter submit
 	letterInput.on('submit', function(e){
 		e.preventDefault();
