@@ -2,8 +2,10 @@
 <html>
 <head>
 	<title>Hangman</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/normalize.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="css/main.css">
 	<link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -28,25 +30,24 @@
     </div>
 	
 
-	<div class="board">
+	
 		<div class="score">
 			<div class="prompt">
 				<p id="intro">
 				Find the answer to the hidden word below by guessing letters.  If you guess wrong six times you lose and a man gets hanged.  Enter a letter to get started!
 				</p>
+				
 				<form id="letterInput">
 					<input type="text" name="letterGuess" maxlength="1" size="3" autocomplete="off">
 					<button type="submit">Enter</button>
 				</form>
-
 			</div>
+			
 			<div class="guesses">
 				<!-- This <p> element will display messages about current guesses -->
 				<p></p>
 				<p></p>
-			</div>
-
-			
+			</div>	
 		</div>
 
 		<div class="person">
@@ -82,11 +83,13 @@
 						</div>
 					</div>
 				</div>
-				
+				<div id="bottom">
+					
+				</div>
 			</div>
-			<div id="bottom"></div>
+			
 		</div>
-	</div>
+	
 
 	<div class="display">
 		<div class="word">
@@ -94,6 +97,10 @@
 		</div>
 					
 	</div>
+
+	<footer class="main-footer">
+		
+	</footer>
 	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
