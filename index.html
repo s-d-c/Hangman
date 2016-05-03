@@ -2,14 +2,16 @@
 <html>
 <head>
 	<title>Hangman</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/normalize.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="css/main.css">
 	<link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header id="title-banner">
+	<div class="header">
 		<h1>Hangman</h1>	
-	</header>
+	</div>
 
 	<div class="modal fade" id="game-over" tabindex="-1" role="dialog">
   		<div class="modal-dialog">
@@ -28,66 +30,68 @@
     	</div>
     </div>
 	
-
-	<div class="board">
-		<div class="score">
-			<div class="prompt">
-				<p id="intro">
-				Find the answer to the hidden word below by guessing letters.  If you guess wrong six times you lose and a man gets hanged.  Enter a letter to get started!
-				</p>
-				<form id="letterInput">
-					<input type="text" name="letterGuess" maxlength="1" size="3" autocomplete="off">
-					<button type="submit">Enter</button>
-				</form>
-
-			</div>
-			<div class="guesses">
-				<!-- This <p> element will display messages about current guesses -->
-				<p></p>
-				<p></p>
-			</div>
-
-			
-		</div>
-
-		<div class="person">
-			<div class="gallows-box">
+    <div class="wrapper clearfix">
 				
-				<div id="post">
-				</div>
-				<div id="top">
+			<div class="score">
+				<div class="prompt">
+					<p id="intro">
+					Find the answer to the hidden word below by guessing letters.  If you guess wrong six times you lose and a man gets hanged.  Enter a letter to get started!
+					</p>
 					
+					<form id="letterInput">
+						<input type="text" name="letterGuess" maxlength="1" size="3" autocomplete="off">
+						<button type="submit">Enter</button>
+					</form>
 				</div>
-				<div id="rope">
+				
+				<div class="guesses">
+					<!-- This <p> element will display messages about current guesses -->
+					<p></p>
+					<p></p>
+				</div>	
+			</div>
+
+			<div class="person">
+				<div class="gallows-box">
 					
-				</div>
-				<div class="hanging-man">
-					<div id="head">
+					<div id="post">
+					</div>
+					<div id="top">
 						
 					</div>
-					<div class="upper-body">
-						<div  id="left-arm">	
-						</div>
-						<div  id="right-arm">	
-						</div>
-						<div id="mid-section">
-						</div>
+					<div id="rope">
+						
 					</div>
+					<div class="hanging-man">
+						<div id="head">
+							
+						</div>
+						<div class="upper-body">
+							<div  id="left-arm">	
+							</div>
+							<div  id="right-arm">	
+							</div>
+							<div id="mid-section">
+							</div>
+						</div>
 
-					<div class="lower-body">
-						<div id="left-leg">
-						</div>
-						<div id="right-leg">	
-						</div>
-						<div id="waist">
+						<div class="lower-body">
+							<div id="left-leg">
+							</div>
+							<div id="right-leg">	
+							</div>
+							<div id="waist">
+							</div>
 						</div>
 					</div>
+					<!-- <div id="bottom">
+						
+					</div> -->
 				</div>
 				
 			</div>
-			<div id="bottom"></div>
 		</div>
-	</div>
+	
 
 	<div class="display">
 		<div class="word">
@@ -95,6 +99,10 @@
 		</div>
 					
 	</div>
+
+	<footer class="main-footer">
+		
+	</footer>
 	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

@@ -184,11 +184,11 @@ $(document).ready(function(){
 
 		//verify that its a letter and not another char
 		if(!/^[a-zA-Z]+$/.test(letter)){
-			alert('There are only letters in this word.  Enter one.');
+			alert('You must enter a letter.');
 
 		//verify that it has not been called and alert if it has
 		} else if(HANGMAN.calledLetters.indexOf(letter) >= 0){
-			alert('Try again.  That letter has already been guessed');
+			alert('Try again.  That letter has already been guessed.');
 
 		} else {
 		// call checkLetter if it hasn't been called yet
