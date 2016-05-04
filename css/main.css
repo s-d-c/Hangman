@@ -50,7 +50,7 @@ h1 {
 
 #letterInput {
 	font-size: 1.5em;
-	width: 30%;
+	width: 40%;
 	margin: 0 auto;
 }
 
@@ -107,8 +107,8 @@ h1 {
 }
 
 .letter {
-	font-size: 4.5em;
-	margin: 0 1rem;
+	font-size: 4em;
+	margin: 0 .5rem;
 }
 
 /* elements of the hanging stick figure */
