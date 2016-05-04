@@ -45,7 +45,8 @@ h1 {
 	padding: .75em;
 	margin-bottom: 0;
 	font-size: 1.5em;
-	color: rgba(255,255,255, .9);
+	/*color: rgba(255,255,255, .9);*/
+	color: rgba(255,222,173,.8);
 }
 
 .guesses p:first-child {
@@ -54,7 +55,7 @@ h1 {
 
 #letterInput {
 	font-size: 1.5em;
-	width: 40%;
+	width: 35%;
 	margin: 0 auto;
 }
 
@@ -73,21 +74,24 @@ h1 {
 
 /* Containers -----------------------*/
 
-.score {
+.wrapper {
 	width: 90%;
-	min-width: 300px;
-	/*height: 210px;*/
 	margin: 0 auto;
-	margin-bottom: 1em;
-	background-size: cover;
-	border-radius: 2.5%;
+}
+
+.score,
+.person {
+	width: 100%;
+	min-width: 300px;
+	max-width: 475px;
+	margin: 0 auto;
+	margin-bottom: 2em;
 }
 
 /* Word box -------------------------*/
 
 .display {
-	width: 90%;
-	min-width: 300px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -104,13 +108,10 @@ h1 {
 }
 
 .person {
-	width: 90%;
-	min-width: 300px;
 	height: 260px;
-	margin: 0 auto;
-	margin-bottom: 1em;
 	background-image: url('../Wooden-Door-to-Old-Western-Bar.jpg');
 	background-size: cover;
+	background-position: center;
 	border-radius: 2.5%;
 }
 
@@ -225,21 +226,28 @@ h1 {
 
 /* Media queries --------------------*/
 
-@media (min-width: 400px) {
-	.score,
+@media (min-width: 470px) {
+	body {
+		font-size: 12px;
+	}
+
 	.person {
-		height: 260px;
+		height: 400px;
 	}
 }
 
-@media (min-width: 748px) {
+@media (min-width: 1100px) {
 	body {
 		font-size: 16px;
 	}
 
+	#letterInput {
+		width: 50%;
+	}
+
 	.score,
 	.person {
-		width: 45%;
+		max-width: 45%;
 		height: 470px;
 		margin-left: 2.5%;
 		margin-right: 2.5%;
