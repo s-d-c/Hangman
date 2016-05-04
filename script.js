@@ -19,7 +19,9 @@ var HANGMAN = {
 	searchWord: function(){
 		$.ajax({
 			method   : 'GET',
-			url		 : 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=1&maxCorpusCount=100000&minDictionaryCount=20&maxDictionaryCount=-1&minLength=5&maxLength=16&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5',
+
+			url		 : 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=10000&maxCorpusCount=400000&minDictionaryCount=20&maxDictionaryCount=-1&minLength=5&maxLength=15&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5',
+
 			success  : function(response){
 					
 					

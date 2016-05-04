@@ -48,6 +48,10 @@ h1 {
 	color: rgba(255,255,255, .9);
 }
 
+.guesses p:first-child {
+	padding-bottom: 0;
+}
+
 #letterInput {
 	font-size: 1.5em;
 	width: 40%;
@@ -72,21 +76,9 @@ h1 {
 .score {
 	width: 90%;
 	min-width: 300px;
-	height: 210px;
+	/*height: 210px;*/
 	margin: 0 auto;
 	margin-bottom: 1em;
-	background-image: url('../Wooden-Door-to-Old-Western-Bar.jpg');
-	background-size: cover;
-	border-radius: 2.5%;
-}
-
-.person {
-	width: 90%;
-	min-width: 300px;
-	height: 210px;
-	margin: 0 auto;
-	margin-bottom: 1em;
-	background-image: url('../Western background - imgur.jpg');
 	background-size: cover;
 	border-radius: 2.5%;
 }
@@ -100,7 +92,7 @@ h1 {
 }
 
 .word {
-	margin: 1em auto;
+	margin: 0 auto;
 	text-align: center;
 	border: 4px solid navajowhite;
 	border-radius: 10px;
@@ -108,8 +100,20 @@ h1 {
 
 .letter {
 	font-size: 4em;
-	margin: 0 .5rem;
+	margin: 0 .3rem;
 }
+
+.person {
+	width: 90%;
+	min-width: 300px;
+	height: 260px;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	background-image: url('../Wooden-Door-to-Old-Western-Bar.jpg');
+	background-size: cover;
+	border-radius: 2.5%;
+}
+
 
 /* elements of the hanging stick figure */
 .gallows-box {
