@@ -91,12 +91,19 @@ body{
 	margin-bottom: 2em;
 }
 
+.person {
+	height: 260px;
+	background-image: url('../Wooden-Door-to-Old-Western-Bar.jpg');
+	background-size: cover;
+	background-position: center;
+	border-radius: 2.5%;
+}
+
 /* Word box -------------------------*/
 
-.display {
+/*.display {
 	width: 100%;
-	margin: 0 auto;
-}
+}*/
 
 .word {
 	margin: 0 auto;
@@ -110,16 +117,11 @@ body{
 	margin: 0 .3rem;
 }
 
-.person {
-	height: 260px;
-	background-image: url('../Wooden-Door-to-Old-Western-Bar.jpg');
-	background-size: cover;
-	background-position: center;
-	border-radius: 2.5%;
-}
 
+/* makeup of person div */
 
-/* elements of the hanging stick figure */
+/* hanging structure */
+
 .gallows-box {
 	width: 90%;
 	height: 100%;
@@ -143,7 +145,7 @@ body{
 
 #top {
 	height: 10px;
-	width: 48.5%;
+	width: 49.5%;
 	float: left;
 	background-color: saddlebrown;
 }
@@ -154,6 +156,8 @@ body{
 	background-color: darkgoldenrod;
 	margin: auto;
 }
+
+/* stick figure to be generated */
 
 .hanging-man {
 	width: 48.5%;
@@ -241,13 +245,13 @@ body{
 
 @media (min-width: 568px) and (orientation: landscape) {
 	body {
-		font-size: 8px;
+		font-size: 12px;
 	}
 
 	.score,
 	.person {
 		max-width: 45%;
-		height: 230px;
+		height: 450px;
 		min-width: 230px;
 		margin-left: 2.5%;
 		margin-right: 2.5%;
@@ -268,13 +272,5 @@ body{
 		width: 50%;
 	}
 
-	.score,
-	.person {
-		max-width: 45%;
-		height: 470px;
-		margin-left: 2.5%;
-		margin-right: 2.5%;
-		float: left;
-	}
 }
 
