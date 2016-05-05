@@ -10,9 +10,18 @@ body{
 	font-size: 8px;
 }
 
+/* Header styles --------------------*/
+
 .header {
 	margin: 1.25em 0;
 	color: rgba(255,222,173,.8);
+}
+
+.header h1 {
+	margin: 0;
+	font-size: 6em;
+	text-align: center;
+	font-style: bold;
 }
 
 /* Modal styles ---------------------*/
@@ -30,14 +39,6 @@ body{
 	color: red;
 }
 
-/* Header styles --------------------*/
-
-h1 {
-	margin: 0;
-	font-size: 6em;
-	text-align: center;
-	font-style: bold;
-}
 
 /* Info box styles -----------------*/
 
@@ -55,7 +56,7 @@ h1 {
 
 #letterInput {
 	font-size: 1.5em;
-	width: 37.5%;
+	width: 40%;
 	margin: 0 auto;
 }
 
