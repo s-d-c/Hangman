@@ -226,6 +226,17 @@ h1 {
 
 /* Media queries --------------------*/
 
+@media (orientation: landscape) {
+	.score,
+	.person {
+		max-width: 45%;
+		height: 470px;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		float: left;
+	}
+} 
+
 @media (min-width: 470px) {
 	body {
 		font-size: 12px;
