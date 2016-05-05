@@ -66,6 +66,8 @@ body{
 }
 
 .prompt input {
+	text-align: center;
+	text-transform: uppercase;
 	color: black;
 }
 
