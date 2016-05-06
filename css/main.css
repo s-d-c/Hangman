@@ -245,7 +245,7 @@ body{
 
 @media (min-width: 568px) and (orientation: landscape) {
 	body {
-		font-size: 10px;
+		font-size: 12px;
 	}
 
 	.score,
@@ -263,7 +263,7 @@ body{
 	}
 } 
 
-@media (min-width: 750px) {
+@media (min-width: 1000px) {
 	body {
 		font-size: 16px;
 	}
