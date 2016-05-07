@@ -1,4 +1,4 @@
-# firstProject
+# Hangman
 
 The purpose of this app is to allow a user to play hangman with a randomly selected word. The user inputs a letter, and if the answer contains the letter it is revealed on the screen.  If the user guesses wrong 6 times they lose.  If they guess all of the letters, they win.
 
