@@ -135,12 +135,40 @@ var HANGMAN = {
 		$('#right-leg').slideDown(1000);
 	},
 
+	//build modal overlay with jQuery
+	buildModal: function(){
+		var $overlay = $('<div id="overaly"></div>');
+		var $modal = $('<div id="modal"></div>');
+		var $banner = $('<h1></h1>');
+		var $response = $('<h2></h2>');
+		var $playAgain = $('<p>Click to Play Again.</p>');
+		//add banner to modal 
+		$modal.append($banner);
+		//add response text to modal 
+		$modal.append($response);
+		//add playAgain to modal
+		$modal.append($playAgain);
+		//add modal to overlay
+		$overlay.append($modal);
+		//add overlay
+		$("body").append($overlay);
+		//show overlay
+		$overlay.show();
+		//When overlay is clicked
+		$overlay.click(function(){
+		  //Hide the overlay
+		  $overlay.hide();
+		});
+
+	},
+
 	//behavior for a win
 	onWin: function(){
 		//show a modal with class winner
-		$('.modal-header h1').addClass('winner').text('YOU WIN!!!');
-		$('.modal-body h2').addClass('winner').text('Great Job!');
-		$('#game-over').modal('show');
+		this.buildModal();
+		$('#modal').addClass('winner');
+		$('#modal h1').text('YOU WIN!!!');
+		$('#modal h2').text('Great Job!');
 		//restart game
 		return this.reset();
 	},
@@ -148,9 +176,10 @@ var HANGMAN = {
 	//behavior for a loss
 	onLose: function(){
 		//show a modal with class loser
-		$('.modal-header h1').addClass('loser').text('You Lost :(');
-		$('.modal-body h2').addClass('loser').text('The Answer is ' + this.answer);
-		$('#game-over').modal('show');
+		this.buildModal();
+		$('#modal').addClass('winner');
+		$('#modal h1').text('You Lost :(');
+		$('#modal h2').text('The Answer is ' + this.answer);
 		//restart game
 		return this.reset();
 	},
