@@ -158,8 +158,9 @@ var HANGMAN = {
 		$overlay.click(function(){
 		  //Hide the overlay
 		  $overlay.hide();
+		  //restart game
+		  HANGMAN.reset();
 		});
-
 	},
 
 	//behavior for a win
@@ -169,8 +170,6 @@ var HANGMAN = {
 		$('#modal').addClass('winner');
 		$('#modal h1').text('YOU WIN!!!');
 		$('#modal h2').text('Great Job!');
-		//restart game
-		return this.reset();
 	},
 
 	//behavior for a loss
@@ -180,8 +179,6 @@ var HANGMAN = {
 		$('#modal').addClass('winner');
 		$('#modal h1').text('You Lost :(');
 		$('#modal h2').text('The Answer is ' + this.answer);
-		//restart game
-		return this.reset();
 	},
 
 	//to reset/start the game
@@ -230,7 +227,5 @@ $(document).ready(function(){
 		$('input:text').val('');
 		this.focus();
 	});
-
-
 });
 

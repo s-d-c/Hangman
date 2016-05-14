@@ -41,6 +41,8 @@ body{
 	background-color: white;
 	width: 50%;
 	margin: 0 auto;
+	font-size: 3em;
+	border-radius: 5%;
 }
 
 .winner {
