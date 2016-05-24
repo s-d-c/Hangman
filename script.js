@@ -30,6 +30,7 @@ var HANGMAN = {
 					HANGMAN.answerArr = HANGMAN.answer.split("");
 
 					console.log(HANGMAN.answerArr);
+					
 					HANGMAN.displayArr = HANGMAN.answerArr.map(function() {
 						return "_";
 					});

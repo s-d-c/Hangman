@@ -1,0 +1,299 @@
+* {
+	box-sizing: border-box;
+}
+
+
+body{
+	background-color: dimgray;
+	font-family: 'Rye', cursive;
+	color: navajowhite;
+	font-size: 8px;
+}
+
+/* Header styles --------------------*/
+
+.header {
+	margin: 1.25em 0;
+	color: rgba(255,222,173,.8);
+}
+
+.header h1 {
+	margin: 0;
+	font-size: 6em;
+	text-align: center;
+	font-style: bold;
+}
+
+/* Modal styles ---------------------*/
+
+#overaly {
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	text-align: center;
+}
+
+#modal {
+	background-color: white;
+	width: 50%;
+	margin: 0 auto;
+	font-size: 3em;
+	border-radius: 5%;
+}
+
+.winner {
+	color: green;
+}
+
+.loser {
+	color: red;
+}
+
+
+/* Info box styles -----------------*/
+
+.score p {
+	padding: .75em;
+	margin-bottom: 0;
+	font-size: 1.5em;
+	/*color: rgba(255,255,255, .9);*/
+	color: rgba(255,222,173,.8);
+}
+
+.guesses p:first-child {
+	padding-bottom: 0;
+}
+
+#letterInput {
+	font-size: 1.5em;
+	width: 45%;
+	margin: 0 auto;
+}
+
+.prompt input,
+.prompt button {
+	margin-left: 5%;
+}
+
+.prompt input {
+	text-align: center;
+	text-transform: uppercase;
+	color: black;
+}
+
+.prompt button {
+	background-color: black;
+}
+
+/* Containers -----------------------*/
+
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.score,
+.person {
+	width: 100%;
+	min-width: 300px;
+	max-width: 475px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+}
+
+.person {
+	height: 260px;
+	background-image: url('../Wooden-Door-to-Old-Western-Bar.jpg');
+	background-size: cover;
+	background-position: center;
+	border-radius: 2.5%;
+}
+
+/* Word box -------------------------*/
+
+/*.display {
+	width: 100%;
+}*/
+
+.word {
+	margin: 0 auto;
+	text-align: center;
+	border: 4px solid navajowhite;
+	border-radius: 10px;
+}
+
+.letter {
+	font-size: 4em;
+	margin: 0 .3rem;
+}
+
+
+/* makeup of person div */
+
+/* hanging structure */
+
+.gallows-box {
+	width: 90%;
+	height: 100%;
+	margin: auto;
+	
+}
+
+/*#bottom {
+	height: 10px;
+	width: 50%;
+	float: left;
+	background-color: saddlebrown;
+}*/
+
+#post {
+	height: 100%;
+	width: 10px;
+	float: left;
+	background-color: saddlebrown;
+}
+
+#top {
+	height: 10px;
+	width: 49.5%;
+	float: left;
+	background-color: saddlebrown;
+}
+
+#rope {
+	height: 15%;
+	width: 10px;
+	background-color: darkgoldenrod;
+	margin: auto;
+}
+
+/* stick figure to be generated */
+
+.hanging-man {
+	width: 48.5%;
+	max-width: 150px;
+	height: 85%;
+	margin: 0 auto;
+}
+#head {
+	width: 45px;
+	height: 40px;
+	border-radius: 22.5px;
+	background-color: tan;
+	margin: auto;
+}
+
+.upper-body {
+	margin: auto;
+	height: 30%;
+}
+
+#mid-section {
+	margin: auto;
+	width: 10px;
+	height: 100%;
+	background-color: maroon;
+	}
+
+.lower-body {
+	margin: auto;
+	height: 35%;
+	width: 30px;
+}
+#waist	{
+	margin: auto;
+	width: 10px;
+	height: 10px;
+	background-color: royalblue;
+}
+
+#left-arm {
+	float: left;
+	height: 7px;
+	width: 50%;
+	background-color: maroon;
+}
+
+#right-arm {
+	float: left;
+	height: 7px;
+	width: 50%;
+	background-color: maroon;
+}
+
+#left-leg {
+	float: left;
+	height: 100%;
+	width: 10px;
+	background-color: royalblue;
+}
+
+#right-leg {
+	float: right;
+	height: 100%;
+	width: 10px;
+	background-color: royalblue;
+}
+
+.main-footer {
+	padding: 1em 0;
+	text-align: center;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+/* Media queries --------------------*/
+
+@media (min-width: 470px) {
+	.wrapper {
+		min-height: calc(100vh - 52px);
+	}
+
+	body {
+		font-size: 12px;
+	}
+
+	.person {
+		height: 400px;
+	}
+}
+
+@media (min-width: 568px) and (orientation: landscape) {
+	body {
+		font-size: 12px;
+	}
+
+	.score,
+	.person {
+		max-width: 45%;
+		height: 400px;
+		min-width: 230px;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		float: left;
+	}
+
+	#letterInput {
+		width: 65%;
+	}
+} 
+
+@media (min-width: 1000px) {
+	body {
+		font-size: 16px;
+	}
+
+	#letterInput {
+		width: 50%;
+	}
+
+}
+
