@@ -15,14 +15,15 @@ body{
 .header {
 	margin: 1.25em 0;
 	color: rgba(255,222,173,.8);
+
+	h1 {
+		margin: 0;
+		font-size: 6em;
+		text-align: center;
+		font-style: bold;
+	}
 }
 
-.header h1 {
-	margin: 0;
-	font-size: 6em;
-	text-align: center;
-	font-style: bold;
-}
 
 /* Modal styles ---------------------*/
 
@@ -56,38 +57,97 @@ body{
 
 /* Info box styles -----------------*/
 
-.score p {
-	padding: .75em;
-	margin-bottom: 0;
-	font-size: 1.5em;
-	/*color: rgba(255,255,255, .9);*/
-	color: rgba(255,222,173,.8);
+.score {
+	p {
+		padding: .75em;
+		margin-bottom: 0;
+		font-size: 1.5em;
+		color: rgba(255,222,173,.8);
+	}
+
+	.prompt #letterInput {
+		font-size: 1.5em;
+		width: 45%;
+		margin: 0 auto;
+
+		input,
+		button {
+			margin-left: 5%;
+		}
+
+		input {
+			text-align: center;
+			text-transform: uppercase;
+			color: black;
+		}
+
+		button {
+			background-color: black;
+		}
+	}
+
+	.guesses p {
+			&:first-child {
+				padding-bottom: 0;
+			}
+		}
+
+	.word {
+		margin: 0 auto;
+		text-align: center;
+		border: 4px solid navajowhite;
+		border-radius: 10px;
+
+		.letter {
+			font-size: 4em;
+			margin: 0 .3rem;
+		}
+	}
 }
 
-.guesses p:first-child {
-	padding-bottom: 0;
-}
+// .score p {
+// 	padding: .75em;
+// 	margin-bottom: 0;
+// 	font-size: 1.5em;
+// 	color: rgba(255,222,173,.8);
+// }
 
-#letterInput {
-	font-size: 1.5em;
-	width: 45%;
-	margin: 0 auto;
-}
+// .guesses p:first-child {
+// 	padding-bottom: 0;
+// }
 
-.prompt input,
-.prompt button {
-	margin-left: 5%;
-}
+// #letterInput {
+// 	font-size: 1.5em;
+// 	width: 45%;
+// 	margin: 0 auto;
+// }
 
-.prompt input {
-	text-align: center;
-	text-transform: uppercase;
-	color: black;
-}
+// .prompt input,
+// .prompt button {
+// 	margin-left: 5%;
+// }
 
-.prompt button {
-	background-color: black;
-}
+// .prompt input {
+// 	text-align: center;
+// 	text-transform: uppercase;
+// 	color: black;
+// }
+
+// .prompt button {
+// 	background-color: black;
+// }
+
+// .word {
+// 	margin: 0 auto;
+// 	text-align: center;
+// 	border: 4px solid navajowhite;
+// 	border-radius: 10px;
+// }
+
+// .letter {
+// 	font-size: 4em;
+// 	margin: 0 .3rem;
+// }
 
 /* Containers -----------------------*/
 
@@ -112,25 +172,6 @@ body{
 	background-position: center;
 	border-radius: 2.5%;
 }
-
-/* Word box -------------------------*/
-
-/*.display {
-	width: 100%;
-}*/
-
-.word {
-	margin: 0 auto;
-	text-align: center;
-	border: 4px solid navajowhite;
-	border-radius: 10px;
-}
-
-.letter {
-	font-size: 4em;
-	margin: 0 .3rem;
-}
-
 
 /* makeup of person div */
 

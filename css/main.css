@@ -11,12 +11,11 @@ body {
 .header {
   margin: 1.25em 0;
   color: rgba(255, 222, 173, 0.8); }
-
-.header h1 {
-  margin: 0;
-  font-size: 6em;
-  text-align: center;
-  font-style: bold; }
+  .header h1 {
+    margin: 0;
+    font-size: 6em;
+    text-align: center;
+    font-style: bold; }
 
 /* Modal styles ---------------------*/
 #overaly {
@@ -47,28 +46,32 @@ body {
   padding: .75em;
   margin-bottom: 0;
   font-size: 1.5em;
-  /*color: rgba(255,255,255, .9);*/
   color: rgba(255, 222, 173, 0.8); }
-
-.guesses p:first-child {
-  padding-bottom: 0; }
-
-#letterInput {
+.score .prompt #letterInput {
   font-size: 1.5em;
   width: 45%;
   margin: 0 auto; }
+  .score .prompt #letterInput input,
+  .score .prompt #letterInput button {
+    margin-left: 5%; }
+  .score .prompt #letterInput input {
+    text-align: center;
+    text-transform: uppercase;
+    color: black; }
+  .score .prompt #letterInput button {
+    background-color: black; }
+.score .guesses p:first-child {
+  padding-bottom: 0; }
 
-.prompt input,
-.prompt button {
-  margin-left: 5%; }
-
-.prompt input {
+.word {
+  margin: 0 auto;
   text-align: center;
-  text-transform: uppercase;
-  color: black; }
+  border: 4px solid navajowhite;
+  border-radius: 10px; }
 
-.prompt button {
-  background-color: black; }
+.letter {
+  font-size: 4em;
+  margin: 0 .3rem; }
 
 /* Containers -----------------------*/
 .wrapper {
@@ -89,20 +92,6 @@ body {
   background-size: cover;
   background-position: center;
   border-radius: 2.5%; }
-
-/* Word box -------------------------*/
-/*.display {
-	width: 100%;
-}*/
-.word {
-  margin: 0 auto;
-  text-align: center;
-  border: 4px solid navajowhite;
-  border-radius: 10px; }
-
-.letter {
-  font-size: 4em;
-  margin: 0 .3rem; }
 
 /* makeup of person div */
 /* hanging structure */
