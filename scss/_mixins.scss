@@ -1,0 +1,14 @@
+/* Man shape mixins ----------------*/
+@mixin shape-marg ($height, $width, $background-color) {
+	margin: auto;
+	height: $height;
+	width: $width;
+	background-color: $background-color;
+}
+
+@mixin shape-fl ($float, $height, $width, $background-color) {
+	float: $float;
+	height: $height;
+	width: $width;
+	background-color: $background-color;
+}

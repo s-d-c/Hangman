@@ -1,0 +1,49 @@
+/* Info box styles -----------------*/
+.score {
+	p {
+		padding: .75em;
+		margin-bottom: 0;
+		font-size: 1.5em;
+		color: $primary-color;
+		text-align: center;
+	}
+
+	.prompt #letterInput {
+		font-size: 1.5em;
+		width: 45%;
+		margin: 0 auto;
+
+		input,
+		button {
+			margin-left: 5%;
+		}
+
+		input {
+			text-align: center;
+			text-transform: uppercase;
+			color: black;
+		}
+
+		button {
+			background-color: black;
+		}
+	}
+
+	.guesses p {
+			&:first-child {
+				padding-bottom: 0;
+			}
+		}
+
+	.word {
+		margin: 0 auto;
+		text-align: center;
+		border: 4px solid $primary-color;
+		border-radius: 10px;
+
+		.letter {
+			font-size: 4em;
+			margin: 0 .3rem;
+		}
+	}
+}

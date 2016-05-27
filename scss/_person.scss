@@ -1,0 +1,66 @@
+/* hanging structure */
+.gallows-box {
+	margin: auto;
+	height: 100%;
+	width: 90%;	
+}
+
+#post {
+	@include shape-fl(left, 100%, 10px, $structure-color);
+}
+
+#top {
+	@include shape-fl(left, 10px, 49.5%, $structure-color);
+}
+
+#rope {
+	@include shape-marg(15%, 10px, darkgoldenrod);
+}
+
+/* stick figure to be generated */
+.hanging-man {
+	margin: 0 auto;
+	height: 85%;
+	width: 48.5%;
+	max-width: 150px;	
+}
+
+#head {
+	@include shape-marg(40px, 45px, tan);
+	border-radius: 22.5px;
+}
+
+.upper-body {
+	margin: auto;
+	height: 30%;
+}
+
+#mid-section {
+	@include shape-marg(100%, 10px, $shirt-color);
+	}
+
+#left-arm {
+	@include shape-fl(left, 7px, 50%, $shirt-color);
+}
+
+#right-arm {
+	@include shape-fl(left, 7px, 50%, $shirt-color);
+}
+
+.lower-body {
+	margin: auto;
+	height: 35%;
+	width: 30px;
+}
+
+#waist	{
+	@include shape-marg(10px, 10px, $pants-color);
+}
+
+#left-leg {
+	@include shape-fl(left, 100%, 10px, $pants-color);
+}
+
+#right-leg {
+	@include shape-fl(right, 100%, 10px, $pants-color);
+}

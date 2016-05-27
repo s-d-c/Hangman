@@ -1,0 +1,40 @@
+/* Media queries --------------------*/
+@media (min-width: 470px) {
+	body {
+		font-size: 12px;
+	}
+
+	.person {
+		height: 400px;
+	}
+}
+
+@media (min-width: 568px) and (orientation: landscape) {
+	body {
+		font-size: 12px;
+	}
+
+	.score,
+	.person {
+		max-width: 45%;
+		height: 400px;
+		min-width: 230px;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		float: left;
+	}
+
+	#letterInput {
+		width: 65%;
+	}
+} 
+
+@media (min-width: 1000px) {
+	body {
+		font-size: 16px;
+	}
+
+	#letterInput {
+		width: 50%;
+	}
+}
