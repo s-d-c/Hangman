@@ -70,9 +70,7 @@ body{
 	color: red;
 }
 
-
 /* Info box styles -----------------*/
-
 .score {
 	p {
 		padding: .75em;
@@ -125,6 +123,7 @@ body{
 .wrapper {
 	width: 90%;
 	margin: 0 auto;
+	min-height: calc(100vh - 52px);
 }
 
 .score,
@@ -227,7 +226,7 @@ body{
 /* Media queries --------------------*/
 @media (min-width: 470px) {
 	.wrapper {
-		min-height: calc(100vh - 52px);
+		
 	}
 
 	body {
