@@ -1,10 +1,11 @@
+/* Variables ------------------------*/
 * {
   box-sizing: border-box; }
 
 body {
   background-color: dimgray;
   font-family: 'Rye', cursive;
-  color: navajowhite;
+  color: rgba(255, 222, 173, 0.8);
   font-size: 8px; }
 
 /* Header styles --------------------*/
@@ -14,8 +15,7 @@ body {
   .header h1 {
     margin: 0;
     font-size: 6em;
-    text-align: center;
-    font-style: bold; }
+    text-align: center; }
 
 /* Modal styles ---------------------*/
 #overaly {
@@ -62,16 +62,14 @@ body {
     background-color: black; }
 .score .guesses p:first-child {
   padding-bottom: 0; }
-
-.word {
+.score .word {
   margin: 0 auto;
   text-align: center;
-  border: 4px solid navajowhite;
+  border: 4px solid rgba(255, 222, 173, 0.8);
   border-radius: 10px; }
-
-.letter {
-  font-size: 4em;
-  margin: 0 .3rem; }
+  .score .word .letter {
+    font-size: 4em;
+    margin: 0 .3rem; }
 
 /* Containers -----------------------*/
 .wrapper {
@@ -100,12 +98,6 @@ body {
   height: 100%;
   margin: auto; }
 
-/*#bottom {
-	height: 10px;
-	width: 50%;
-	float: left;
-	background-color: saddlebrown;
-}*/
 #post {
   height: 100%;
   width: 10px;
@@ -148,17 +140,6 @@ body {
   height: 100%;
   background-color: maroon; }
 
-.lower-body {
-  margin: auto;
-  height: 35%;
-  width: 30px; }
-
-#waist {
-  margin: auto;
-  width: 10px;
-  height: 10px;
-  background-color: royalblue; }
-
 #left-arm {
   float: left;
   height: 7px;
@@ -170,6 +151,17 @@ body {
   height: 7px;
   width: 50%;
   background-color: maroon; }
+
+.lower-body {
+  margin: auto;
+  height: 35%;
+  width: 30px; }
+
+#waist {
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  background-color: royalblue; }
 
 #left-leg {
   float: left;

@@ -1,3 +1,9 @@
+/* Variables ------------------------*/
+$primary-color: rgba(255,222,173,.8);
+$pants-color: royalblue;
+$shirt-color: maroon;
+$structure-color: saddlebrown;
+
 * {
 	box-sizing: border-box;
 }
@@ -6,27 +12,23 @@
 body{
 	background-color: dimgray;
 	font-family: 'Rye', cursive;
-	color: navajowhite;
+	color: $primary-color;
 	font-size: 8px;
 }
 
 /* Header styles --------------------*/
-
 .header {
 	margin: 1.25em 0;
-	color: rgba(255,222,173,.8);
+	color: $primary-color;
 
 	h1 {
 		margin: 0;
 		font-size: 6em;
 		text-align: center;
-		font-style: bold;
 	}
 }
 
-
 /* Modal styles ---------------------*/
-
 #overaly {
 	background: rgba(0,0,0,0.7);
 	width: 100%;
@@ -62,7 +64,7 @@ body{
 		padding: .75em;
 		margin-bottom: 0;
 		font-size: 1.5em;
-		color: rgba(255,222,173,.8);
+		color: $primary-color;
 	}
 
 	.prompt #letterInput {
@@ -95,7 +97,7 @@ body{
 	.word {
 		margin: 0 auto;
 		text-align: center;
-		border: 4px solid navajowhite;
+		border: 4px solid $primary-color;
 		border-radius: 10px;
 
 		.letter {
@@ -108,7 +110,6 @@ body{
 
 
 /* Containers -----------------------*/
-
 .wrapper {
 	width: 90%;
 	margin: 0 auto;
@@ -134,7 +135,6 @@ body{
 /* makeup of person div */
 
 /* hanging structure */
-
 .gallows-box {
 	width: 90%;
 	height: 100%;
@@ -142,25 +142,18 @@ body{
 	
 }
 
-/*#bottom {
-	height: 10px;
-	width: 50%;
-	float: left;
-	background-color: saddlebrown;
-}*/
-
 #post {
 	height: 100%;
 	width: 10px;
 	float: left;
-	background-color: saddlebrown;
+	background-color: $structure-color;
 }
 
 #top {
 	height: 10px;
 	width: 49.5%;
 	float: left;
-	background-color: saddlebrown;
+	background-color: $structure-color;
 }
 
 #rope {
@@ -171,13 +164,13 @@ body{
 }
 
 /* stick figure to be generated */
-
 .hanging-man {
 	width: 48.5%;
 	max-width: 150px;
 	height: 85%;
 	margin: 0 auto;
 }
+
 #head {
 	width: 45px;
 	height: 40px;
@@ -195,47 +188,48 @@ body{
 	margin: auto;
 	width: 10px;
 	height: 100%;
-	background-color: maroon;
+	background-color: $shirt-color;
 	}
-
-.lower-body {
-	margin: auto;
-	height: 35%;
-	width: 30px;
-}
-#waist	{
-	margin: auto;
-	width: 10px;
-	height: 10px;
-	background-color: royalblue;
-}
 
 #left-arm {
 	float: left;
 	height: 7px;
 	width: 50%;
-	background-color: maroon;
+	background-color: $shirt-color;
 }
 
 #right-arm {
 	float: left;
 	height: 7px;
 	width: 50%;
-	background-color: maroon;
+	background-color: $shirt-color;
+}
+
+.lower-body {
+	margin: auto;
+	height: 35%;
+	width: 30px;
+}
+
+#waist	{
+	margin: auto;
+	width: 10px;
+	height: 10px;
+	background-color: $pants-color;
 }
 
 #left-leg {
 	float: left;
 	height: 100%;
 	width: 10px;
-	background-color: royalblue;
+	background-color: $pants-color;
 }
 
 #right-leg {
 	float: right;
 	height: 100%;
 	width: 10px;
-	background-color: royalblue;
+	background-color: $pants-color;
 }
 
 .main-footer {
@@ -250,7 +244,6 @@ body{
 }
 
 /* Media queries --------------------*/
-
 @media (min-width: 470px) {
 	.wrapper {
 		min-height: calc(100vh - 52px);
