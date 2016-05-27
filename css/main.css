@@ -46,7 +46,8 @@ body {
   padding: .75em;
   margin-bottom: 0;
   font-size: 1.5em;
-  color: rgba(255, 222, 173, 0.8); }
+  color: rgba(255, 222, 173, 0.8);
+  text-align: center; }
 .score .prompt #letterInput {
   font-size: 1.5em;
   width: 45%;
@@ -74,7 +75,8 @@ body {
 /* Containers -----------------------*/
 .wrapper {
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  min-height: calc(100vh - 52px); }
 
 .score,
 .person {
@@ -186,9 +188,6 @@ body {
 
 /* Media queries --------------------*/
 @media (min-width: 470px) {
-  .wrapper {
-    min-height: calc(100vh - 52px); }
-
   body {
     font-size: 12px; }
 
