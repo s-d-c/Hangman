@@ -1,0 +1,23 @@
+/* Containers -----------------------*/
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+	min-height: calc(100vh - 52px);
+}
+
+.score,
+.person {
+	width: 100%;
+	min-width: 300px;
+	max-width: 475px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+}
+
+.person {
+	height: 260px;
+	background-image: url('../Wooden-Door-to-Old-Western-Bar.jpg');
+	background-size: cover;
+	background-position: center;
+	border-radius: 2.5%;
+}
