@@ -4,6 +4,20 @@ $pants-color: royalblue;
 $shirt-color: maroon;
 $structure-color: saddlebrown;
 
+@mixin shape-marg ($height, $width, $background-color) {
+	margin: auto;
+	height: $height;
+	width: $width;
+	background-color: $background-color;
+}
+
+@mixin shape-fl ($float, $height, $width, $background-color) {
+	float: $float;
+	height: $height;
+	width: $width;
+	background-color: $background-color;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -107,8 +121,6 @@ body{
 	}
 }
 
-
-
 /* Containers -----------------------*/
 .wrapper {
 	width: 90%;
@@ -136,47 +148,34 @@ body{
 
 /* hanging structure */
 .gallows-box {
-	width: 90%;
-	height: 100%;
 	margin: auto;
-	
+	height: 100%;
+	width: 90%;	
 }
 
 #post {
-	height: 100%;
-	width: 10px;
-	float: left;
-	background-color: $structure-color;
+	@include shape-fl(left, 100%, 10px, $structure-color);
 }
 
 #top {
-	height: 10px;
-	width: 49.5%;
-	float: left;
-	background-color: $structure-color;
+	@include shape-fl(left, 10px, 49.5%, $structure-color);
 }
 
 #rope {
-	height: 15%;
-	width: 10px;
-	background-color: darkgoldenrod;
-	margin: auto;
+	@include shape-marg(15%, 10px, darkgoldenrod);
 }
 
 /* stick figure to be generated */
 .hanging-man {
-	width: 48.5%;
-	max-width: 150px;
-	height: 85%;
 	margin: 0 auto;
+	height: 85%;
+	width: 48.5%;
+	max-width: 150px;	
 }
 
 #head {
-	width: 45px;
-	height: 40px;
+	@include shape-marg(40px, 45px, tan);
 	border-radius: 22.5px;
-	background-color: tan;
-	margin: auto;
 }
 
 .upper-body {
@@ -185,24 +184,15 @@ body{
 }
 
 #mid-section {
-	margin: auto;
-	width: 10px;
-	height: 100%;
-	background-color: $shirt-color;
+	@include shape-marg(100%, 10px, $shirt-color);
 	}
 
 #left-arm {
-	float: left;
-	height: 7px;
-	width: 50%;
-	background-color: $shirt-color;
+	@include shape-fl(left, 7px, 50%, $shirt-color);
 }
 
 #right-arm {
-	float: left;
-	height: 7px;
-	width: 50%;
-	background-color: $shirt-color;
+	@include shape-fl(left, 7px, 50%, $shirt-color);
 }
 
 .lower-body {
@@ -212,24 +202,15 @@ body{
 }
 
 #waist	{
-	margin: auto;
-	width: 10px;
-	height: 10px;
-	background-color: $pants-color;
+	@include shape-marg(10px, 10px, $pants-color);
 }
 
 #left-leg {
-	float: left;
-	height: 100%;
-	width: 10px;
-	background-color: $pants-color;
+	@include shape-fl(left, 100%, 10px, $pants-color);
 }
 
 #right-leg {
-	float: right;
-	height: 100%;
-	width: 10px;
-	background-color: $pants-color;
+	@include shape-fl(right, 100%, 10px, $pants-color);
 }
 
 .main-footer {
