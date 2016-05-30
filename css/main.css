@@ -373,6 +373,8 @@ body {
     text-align: center; }
 
 .main-footer {
+  float: left;
+  width: 100%;
   padding: 1em 0;
   text-align: center; }
 
@@ -416,15 +418,17 @@ body {
   font-size: 1.5em;
   width: 45%;
   margin: 0 auto; }
-  .score .prompt #letterInput input,
-  .score .prompt #letterInput button {
-    margin-left: 5%; }
   .score .prompt #letterInput input {
+    margin-left: 1rem;
     text-align: center;
     text-transform: uppercase;
     color: black; }
   .score .prompt #letterInput button {
-    background-color: black; }
+    float: right;
+    margin-right: 1rem;
+    background-color: rgba(255, 222, 173, 0.8);
+    color: dimgray;
+    font-weight: bold; }
 .score .guesses p:first-child {
   padding-bottom: 0; }
 .score .word {

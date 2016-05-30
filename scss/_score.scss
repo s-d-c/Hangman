@@ -13,19 +13,19 @@
 		width: 45%;
 		margin: 0 auto;
 
-		input,
-		button {
-			margin-left: 5%;
-		}
-
 		input {
+			margin-left: 1rem;
 			text-align: center;
 			text-transform: uppercase;
 			color: black;
 		}
 
 		button {
-			background-color: black;
+			float: right;
+			margin-right: 1rem;
+			background-color: $primary-color;
+			color: dimgray;
+			font-weight: bold;
 		}
 	}
 
