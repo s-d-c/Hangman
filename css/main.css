@@ -362,7 +362,7 @@ body {
   background-color: dimgray;
   font-family: 'Rye', cursive;
   color: rgba(255, 222, 173, 0.8);
-  font-size: 8px; }
+  font-size: .5em; }
 
 .header {
   margin: 1.25em 0;
@@ -564,13 +564,13 @@ body {
     margin-right: 2.5%;
     float: left; }
 
-  #letterInput {
-    width: 65%; } }
+  .score .prompt #letterInput {
+    width: 70%; } }
 @media (min-width: 1000px) {
   body {
     font-size: 16px; }
 
-  #letterInput {
+  .score .prompt #letterInput {
     width: 50%; } }
 
 /*# sourceMappingURL=main.css.map */

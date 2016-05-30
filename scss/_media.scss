@@ -24,8 +24,8 @@
 		float: left;
 	}
 
-	#letterInput {
-		width: 100%;
+	.score .prompt #letterInput {
+		width: 70%;
 	}
 } 
 
@@ -34,7 +34,7 @@
 		font-size: 16px;
 	}
 
-	#letterInput {
+	.score .prompt #letterInput {
 		width: 50%;
 	}
 }
