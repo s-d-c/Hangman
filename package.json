@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/s-d-c/Hangman/issues"
   },
-  "homepage": "https://github.com/s-d-c/Hangman#readme"
+  "homepage": "https://github.com/s-d-c/Hangman#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
