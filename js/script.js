@@ -158,7 +158,7 @@ var HANGMAN = {
 		//When overlay is clicked
 		$overlay.click(function(){
 		  //Hide the overlay
-		  $overlay.hide();
+		  $overlay.remove();
 		  //restart game
 		  HANGMAN.reset();
 		});
@@ -176,10 +176,12 @@ var HANGMAN = {
 	//behavior for a loss
 	onLose: function(){
 		//show a modal with class loser
-		this.buildModal();
-		$('#modal').addClass('winner');
-		$('#modal h1').text('You Lost :(');
-		$('#modal h2').text('The Answer is ' + this.answer);
+		setTimeout(function(){
+			HANGMAN.buildModal();
+			$('#modal').addClass('loser');
+			$('#modal h1').text('You Lost :(');
+			$('#modal h2').text('The Answer is ' + HANGMAN.answer);
+		}, 1500);
 	},
 
 	//to reset/start the game
