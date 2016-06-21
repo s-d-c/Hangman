@@ -156,7 +156,8 @@ var HANGMAN = {
 		//show overlay
 		$overlay.show();
 		//When overlay is clicked
-		$overlay.click(function(){
+		$overlay.on("keypress", "click", function(e){
+			e.preventDefault();
 		  //Hide the overlay
 		  $overlay.remove();
 		  //restart game
