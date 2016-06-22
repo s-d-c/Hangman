@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/s-d-c/Hangman#readme",
   "devDependencies": {
+    "del": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
