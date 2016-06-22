@@ -5,8 +5,7 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	  sass = require('gulp-sass'),
 	  maps = require('gulp-sourcemaps'),
-	   del = require('del'),
- ghPages = require('gulp-gh-pages');
+	   del = require('del');
 
 
 gulp.task("minifyScript", function() {
@@ -36,11 +35,6 @@ gulp.task("build", ['minifyScript', 'compileSass'], function() {
 	return gulp.src(["css/main.css", "js/script.min.js", "index.html",
 									"img/**"], {base: './'})
 	.pipe(gulp.dest('dist'));
-});
-
-gulp.task("deploy", function(){
-	return gulp.src('./dist/**/*')
-		.pipe(ghPages());
 });
 
 gulp.task("default", ['build']);
