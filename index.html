@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="css/main.css">
+	<link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="wrapper clearfix">
+  	<div class="header">
+			<h1>Hangman</h1>	
+		</div>	
+		<div class="score">
+			<div class="prompt">
+				<p id="intro">
+				<!-- Find the answer to the hidden word below by guessing letters.  If you guess wrong six times you lose and a man gets hanged.  --> Enter a letter to get started!
+				</p>
+				
+				<form id="letterInput">
+					<input type="text" name="letterGuess" maxlength="1" size="3" autocomplete="off">
+					<button type="submit">Enter</button>
+				</form>
+			</div><!-- prompt div -->
+			
+			<div class="guesses">
+				<!-- This <p> element will display messages about current guesses -->
+				<p></p>
+				<p></p>
+			</div>
+
+			<div class="word">
+				<!-- Inside here javascript will generate a span element for each letter
+				of the word to be guessed.  The start out as blanks until the letter is 
+				guessed or revealed -->
+			</div>		
+		</div><!-- score div -->
+
+		<div class="person">
+			<div class="gallows-box">		
+				<div id="post">
+
+				</div>
+				<div id="top">
+					
+				</div>
+				<div id="rope">
+					
+				</div>
+				<div class="hanging-man">
+					<div id="head">
+						
+					</div>
+					<div class="upper-body">
+						<div  id="left-arm">
+
+						</div>
+						<div  id="right-arm">
+
+						</div>
+						<div id="mid-section">
+
+						</div>
+					</div>
+					<div class="lower-body">
+						<div id="left-leg">
+
+						</div>
+						<div id="right-leg">
+
+						</div>
+						<div id="waist">
+
+						</div>
+					</div>
+				</div><!-- hanging-man div -->
+			</div><!-- gallows-box div -->
+		</div><!-- person div -->
+	</div>
+
+	<footer class="main-footer">
+		Created by Seth Chute &copy;2016
+	</footer>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
